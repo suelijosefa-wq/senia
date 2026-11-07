@@ -1,0 +1,10 @@
+{
+  "name": "SENHA – Oratória Executiva Inclusiva",
+  "description": "Plataforma educacional com inteligência artificial voltada à formação de estudantes de Secretariado Executivo em oratória executiva, liderança inclusiva, simulações corporativas e comunicação assertiva.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
