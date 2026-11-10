@@ -5,7 +5,7 @@ import { speakText, getScreenAudioDescription } from '../services/api';
 interface VoiceCommandControllerProps {
   active: boolean;
   currentTab: string;
-  onNavigate: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat') => void;
+  onNavigate: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company') => void;
   onOpenAccessibilityModal: () => void;
   onOpenLibrasModal: () => void;
 }
@@ -115,6 +115,9 @@ export const VoiceCommandController: React.FC<VoiceCommandControllerProps> = ({
     } else if (cmd.includes('mentora') || cmd.includes('helena') || cmd.includes('chat') || cmd.includes('assistente')) {
       speakText('Abrindo atendimento com a Mentora Helena.');
       onNavigate('chat');
+    } else if (cmd.includes('empresa') || cmd.includes('perfil') || cmd.includes('institucional') || cmd.includes('sobre')) {
+      speakText('Navegando para o Perfil Institucional da Empresa SENIA.');
+      onNavigate('company');
     } else if (cmd.includes('descrever') || cmd.includes('onde estou') || cmd.includes('descrição') || cmd.includes('audio')) {
       const description = getScreenAudioDescription(currentTab);
       speakText(description);
@@ -126,7 +129,7 @@ export const VoiceCommandController: React.FC<VoiceCommandControllerProps> = ({
       onOpenAccessibilityModal();
     } else if (cmd.includes('ajuda') || cmd.includes('comandos')) {
       speakText(
-        'Comandos de voz disponíveis: Diga "Início", "Módulos", "Estúdio", "Evolução", "Mentora", "Descrever Tela", "Libras" ou "Acessibilidade".'
+        'Comandos de voz disponíveis: Diga "Início", "Perfil da Empresa", "Módulos", "Estúdio", "Evolução", "Mentora", "Descrever Tela", "Libras" ou "Acessibilidade".'
       );
     }
   };

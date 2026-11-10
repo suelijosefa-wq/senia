@@ -10,6 +10,9 @@ import {
   Headphones,
   CheckCircle2,
   TrendingUp,
+  Cpu,
+  Building2,
+  Volume2,
 } from 'lucide-react';
 import { speakText, stopSpeaking } from '../services/api';
 
@@ -18,6 +21,7 @@ interface HeroBannerProps {
   onOpenVoiceStudio: () => void;
   onOpenChat: () => void;
   onViewDashboard: () => void;
+  onViewCompanyProfile?: () => void;
   speechEnabled: boolean;
 }
 
@@ -26,12 +30,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   onOpenVoiceStudio,
   onOpenChat,
   onViewDashboard,
+  onViewCompanyProfile,
   speechEnabled,
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = React.useState(false);
 
   const welcomeMessage =
-    'Bem-vindos à SENIA – Oratória Executiva Inclusiva. Uma plataforma pedagógica pioneira dedicada a transformar estudantes e profissionais de Secretariado Executivo em líderes articulados, empáticos e seguros. Treine sua dicção, enfrente simulações de conselho e receba auditorias criteriosas da nossa inteligência artificial com notas de zero a dez.';
+    'Bem-vindos à SENIA – Secretariado Executivo, Network e Inteligência Artificial. Desenvolvendo competências para o seu futuro. A Oratória Executiva Inclusiva é uma de nossas soluções fundamentais, transformando estudantes e profissionais em líderes articulados, empáticos e seguros. Treine sua dicção, enfrente simulações de conselho e receba auditorias criteriosas da nossa inteligência artificial com notas de zero a dez.';
 
   const handleToggleWelcomeSpeech = () => {
     if (isPlayingAudio) {
@@ -43,97 +48,214 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
     }
   };
 
-  const pillars = [
-    {
-      icon: Mic,
-      title: 'Dicção & Fonética C-Level',
-      description: 'Articulação sem esforço vocal, cadência ideal (130-150 PPM) e eliminação de cacoetes e vícios linguísticos.',
-      badge: 'Treino de Voz',
-    },
+  const brandPillars = [
     {
       icon: ShieldCheck,
-      title: 'Simulação de Entrevistas',
-      description: 'Cenários reais de seleção para assessorias de diretoria, presidência e órgãos multilaterais.',
-      badge: 'Carreira',
+      title: 'Profissionalismo',
+      tagline: 'Ética & Governança C-Level',
+      description: 'Postura executiva, protocolo internacional, discrição e excelência em assessoria da alta administração.',
+      badge: 'Pilar 01',
+    },
+    {
+      icon: Cpu,
+      title: 'Inovação',
+      tagline: 'IA Avançada & Futuro',
+      description: 'Adoção prática de Inteligência Artificial generativa para otimização de rotinas e análise fonética.',
+      badge: 'Pilar 02',
     },
     {
       icon: Users,
-      title: 'Reuniões & Crises Corporativas',
-      description: 'Ata sob pressão, mediação de interrupções, gestão de imprevistos e assertividade diplomática.',
-      badge: 'Prática Real',
+      title: 'Conexões',
+      tagline: 'Network & Diplomacia',
+      description: 'Construção de pontes corporativas duradouras, comunicação não-violenta e articulação estratégica multissetorial.',
+      badge: 'Pilar 03',
     },
     {
-      icon: Award,
-      title: 'Liderança & Inclusão Ativa',
-      description: 'Comunicação Não-Violenta (CNV), acolhimento à diversidade, acessibilidade e inteligência emocional.',
-      badge: 'Humanização',
+      icon: TrendingUp,
+      title: 'Resultados',
+      tagline: 'Planejar • Organizar • Conquistar',
+      description: 'Oratória focada na tomada de decisões estratégicas, liderança persuasiva e entrega de valor consistente.',
+      badge: 'Pilar 04',
     },
   ];
 
   return (
-    <section className="relative overflow-hidden py-10 md:py-16 bg-gradient-to-b from-[#050e1d] via-[#091b36] to-[#050e1d]">
+    <section className="relative overflow-hidden py-8 md:py-14 bg-gradient-to-b from-[#050e1d] via-[#091b36] to-[#050e1d]">
       {/* Decorative corporate glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#facc15]/15 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#facc15]/10 via-transparent to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Announcement Tag */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d2447] border border-[#facc15]/35 text-xs font-semibold text-[#fef08a] shadow-md">
             <Sparkles className="w-4 h-4 text-[#facc15] animate-spin" style={{ animationDuration: '8s' }} />
-            <span>Plataforma Oficial de Oratória para Secretariado Executivo</span>
+            <span>SENIA • Secretariado Executivo, Network e Inteligência Artificial</span>
           </div>
 
-          <button
-            onClick={handleToggleWelcomeSpeech}
-            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
-              isPlayingAudio
-                ? 'bg-[#facc15] text-[#050e1d] font-bold animate-pulse'
-                : 'bg-[#0b1c38] text-slate-300 hover:text-white border border-[#facc15]/30'
-            }`}
-            title="Ouvir apresentação da plataforma em voz alta"
-          >
-            <Headphones className="w-3.5 h-3.5" />
-            <span>{isPlayingAudio ? 'Parar Áudio de Boas-Vindas' : 'Ouvir Apresentação (Voz)'}</span>
-          </button>
+          <div className="flex items-center gap-2.5">
+            {onViewCompanyProfile && (
+              <button
+                onClick={onViewCompanyProfile}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#0d2447] hover:bg-[#12315e] text-[#fef08a] border border-[#facc15]/30 transition-all cursor-pointer"
+                title="Conhecer o Perfil Institucional da Empresa SENIA"
+              >
+                <Building2 className="w-3.5 h-3.5 text-[#facc15]" />
+                <span>Perfil da Empresa</span>
+              </button>
+            )}
+
+            <button
+              onClick={handleToggleWelcomeSpeech}
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                isPlayingAudio
+                  ? 'bg-[#facc15] text-[#050e1d] font-bold animate-pulse'
+                  : 'bg-[#0b1c38] text-slate-300 hover:text-white border border-[#facc15]/30'
+              }`}
+              title="Ouvir apresentação da plataforma em voz alta"
+            >
+              <Headphones className="w-3.5 h-3.5" />
+              <span>{isPlayingAudio ? 'Parar Áudio' : 'Ouvir Apresentação (Voz)'}</span>
+            </button>
+          </div>
         </div>
 
-        {/* Main Title & Subtitle */}
-        <div className="max-w-4xl">
-          <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-            A Voz que Articula, Inspira e <span className="gold-gradient-text">Conduz a Alta Gestão</span>.
-          </h1>
-          <p className="mt-5 text-base sm:text-xl text-slate-300 font-serif-luxury leading-relaxed max-w-3xl">
-            A <strong className="text-[#fef08a] font-semibold">SENIA</strong> é um ecossistema educacional com inteligência
-            artificial projetado sob medida para o <em>Secretariado Executivo</em>. Desenvolva autoridade serena,
-            clareza fonética e liderança diplomática por meio de simulações vocais e auditorias avaliativas de 0 a 10.
-          </p>
+        {/* Hero Grid: Highlights Focused on Content, Company Presentation & Inclusive Speech */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Main Title, Subtitle and Actions */}
+          <div className="lg:col-span-7">
+            <div className="inline-block mb-3 px-3 py-1 rounded-lg bg-[#facc15]/15 border border-[#facc15]/40 text-xs font-bold uppercase tracking-widest text-[#fef08a]">
+              Solução Educacional: Oratória Executiva Inclusiva
+            </div>
 
-          {/* Action Buttons */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button
-              onClick={onOpenVoiceStudio}
-              className="flex items-center gap-3 px-6 py-3.5 rounded-xl gold-gradient-bg text-[#050e1d] font-bold text-sm sm:text-base hover:brightness-110 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#050e1d]/80 cursor-pointer"
-            >
-              <Mic className="w-5 h-5 text-[#050e1d]" />
-              <span>Gravar e Analisar Voz</span>
-              <ArrowRight className="w-4 h-4 text-[#050e1d]" />
-            </button>
+            <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+              A Voz que Articula, Inspira e <span className="gold-gradient-text">Conduz a Alta Gestão</span>.
+            </h1>
 
-            <button
-              onClick={onStartTraining}
-              className="flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-slate-100 font-semibold text-sm sm:text-base border border-[#facc15]/40 hover:border-[#facc15] transition-all cursor-pointer"
-            >
-              <Compass className="w-5 h-5 text-[#facc15]" />
-              <span>Explorar Módulos Práticos</span>
-            </button>
+            <p className="mt-3 text-sm sm:text-base text-amber-200/90 font-serif-luxury italic font-medium">
+              &ldquo;Desenvolvendo competências para o seu futuro.&rdquo;
+            </p>
 
-            <button
-              onClick={onOpenChat}
-              className="flex items-center gap-2 px-4 py-3.5 rounded-xl bg-transparent hover:bg-[#0c2242] text-[#fef08a] font-medium text-sm sm:text-base transition-colors cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-[#facc15]" />
-              <span>Falar com a Mentora IA</span>
-            </button>
+            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl font-body">
+              A <strong className="text-white font-semibold">SENIA</strong> é a iniciativa pioneira voltada ao{' '}
+              <span className="text-[#fef08a] font-medium">Secretariado Executivo, Network e Inteligência Artificial</span>,
+              oferecendo a <em>Oratória Executiva Inclusiva</em> como ambiente prático de formação.
+              Desenvolva dicção impecável, enfrente simulações de reuniões e entrevistas de alta governança e receba auditorias
+              criteriosas da IA com notas de 0 a 10.
+            </p>
+
+            {/* Directive Pill */}
+            <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#091830] border border-[#facc15]/30 text-xs text-slate-200">
+              <span className="text-[#facc15] font-bold">Diretriz Executiva:</span>
+              <span className="font-serif-luxury italic font-semibold text-white">Planejar • Organizar • Conquistar</span>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="mt-7 flex flex-wrap items-center gap-3.5">
+              <button
+                onClick={onOpenVoiceStudio}
+                className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl gold-gradient-bg text-[#050e1d] font-bold text-sm sm:text-base hover:brightness-110 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#050e1d]/80 cursor-pointer"
+              >
+                <Mic className="w-5 h-5 text-[#050e1d]" />
+                <span>Gravar e Analisar Voz</span>
+                <ArrowRight className="w-4 h-4 text-[#050e1d]" />
+              </button>
+
+              <button
+                onClick={onStartTraining}
+                className="flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-slate-100 font-semibold text-sm sm:text-base border border-[#facc15]/40 hover:border-[#facc15] transition-all cursor-pointer"
+              >
+                <Compass className="w-5 h-5 text-[#facc15]" />
+                <span>Explorar Módulos</span>
+              </button>
+
+              <button
+                onClick={onOpenChat}
+                className="flex items-center gap-2 px-4 py-3.5 rounded-xl bg-transparent hover:bg-[#0c2242] text-[#fef08a] font-medium text-sm sm:text-base transition-colors cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-[#facc15]" />
+                <span>Mentora Helena (IA)</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Interactive Executive Speech & AI Simulator Card (Spotlight on Content & Education) */}
+          <div className="lg:col-span-5">
+            <div className="rounded-3xl bg-[#071933] border-2 border-[#facc15]/35 p-5 sm:p-6 shadow-2xl shadow-[#050e1d]/90 relative overflow-hidden">
+              <div className="flex items-center justify-between pb-4 border-b border-[#facc15]/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-[#0f2d57] text-[#facc15] flex items-center justify-center">
+                    <Mic className="w-4 h-4 animate-pulse" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-wider font-cinzel">
+                      Simulador de Oratória Executiva
+                    </p>
+                    <p className="text-[10px] text-[#fef08a]">Auditoria Pedagógica com IA</p>
+                  </div>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#facc15]/15 text-[#fef08a] border border-[#facc15]/30 font-semibold">
+                  Ao Vivo
+                </span>
+              </div>
+
+              {/* Simulated Waveform & Cadence */}
+              <div className="my-5 p-4 rounded-2xl bg-[#050e1d] border border-[#facc15]/20">
+                <div className="flex items-center justify-between text-xs mb-2">
+                  <span className="text-slate-300 font-medium">Análise de Ritmo Vocálico</span>
+                  <span className="font-bold text-[#facc15]">142 PPM (Ideal C-Level)</span>
+                </div>
+                <div className="flex items-center justify-between gap-1 h-10 px-2 py-1 rounded-xl bg-[#091a33]/60">
+                  {[35, 60, 45, 80, 65, 90, 50, 75, 40, 85, 95, 70, 55, 60, 80, 65, 45, 90, 75, 60, 40].map((h, i) => (
+                    <div
+                      key={i}
+                      className="flex-1 rounded-full bg-gradient-to-t from-[#facc15]/40 to-[#facc15]"
+                      style={{ height: `${h}%` }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Real-time Assessment Scores */}
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-[#0a2040] border border-[#facc15]/25">
+                  <div className="flex items-center gap-2">
+                    <Award className="w-4 h-4 text-[#facc15]" />
+                    <span className="text-xs font-semibold text-white">Nota Global de Comunicação</span>
+                  </div>
+                  <span className="font-cinzel text-base font-extrabold text-[#fef08a]">9.6 / 10</span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div className="p-2 rounded-lg bg-[#061427] border border-[#facc15]/15">
+                    <p className="text-[10px] text-slate-300">Dicção</p>
+                    <p className="text-xs font-bold text-white mt-0.5">9.8</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-[#061427] border border-[#facc15]/15">
+                    <p className="text-[10px] text-slate-300">Concisão</p>
+                    <p className="text-xs font-bold text-white mt-0.5">9.5</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-[#061427] border border-[#facc15]/15">
+                    <p className="text-[10px] text-slate-300">Empatia / CNV</p>
+                    <p className="text-xs font-bold text-white mt-0.5">9.6</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Inclusive Badges and Quick Trigger */}
+              <div className="mt-4 pt-3 border-t border-[#facc15]/20 flex items-center justify-between text-[11px]">
+                <div className="flex items-center gap-1.5 text-slate-300">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" />
+                  <span>Libras, Voz & Transcrição</span>
+                </div>
+                <button
+                  onClick={onOpenVoiceStudio}
+                  className="text-xs font-bold text-[#fef08a] hover:underline cursor-pointer flex items-center gap-1"
+                >
+                  <span>Experimentar Estúdio</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -145,7 +267,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             </div>
             <div>
               <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">0 a 10</p>
-              <p className="text-xs text-slate-300 font-medium">Rubrica C-Level com IA</p>
+              <p className="text-xs text-slate-300 font-medium">Auditoria com IA</p>
             </div>
           </div>
 
@@ -154,8 +276,8 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">5 Pilares</p>
-              <p className="text-xs text-slate-300 font-medium">Competências Integradas</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">4 Pilares</p>
+              <p className="text-xs text-slate-300 font-medium">Estratégicos SENIA</p>
             </div>
           </div>
 
@@ -165,7 +287,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             </div>
             <div>
               <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">Tempo Real</p>
-              <p className="text-xs text-slate-300 font-medium">Análise de Ritmo & PPM</p>
+              <p className="text-xs text-slate-300 font-medium">Ritmo, Fonética & PPM</p>
             </div>
           </div>
 
@@ -174,23 +296,69 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <Users className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">Inclusiva</p>
-              <p className="text-xs text-slate-300 font-medium">CNV & Acessibilidade</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">100% Inclusiva</p>
+              <p className="text-xs text-slate-300 font-medium">Libras, Áudio & Voz</p>
             </div>
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="mt-12">
+        {/* Apresentação da Empresa (Seção Institucional Proporcional com Logo Elegante) */}
+        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#07162d] via-[#0a2143] to-[#07162d] border border-[#facc15]/30 blue-card-glow">
+          <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+            {/* Proportionate, elegant logo badge */}
+            <div className="w-16 h-16 sm:w-20 sm:h-20 p-1.5 rounded-2xl bg-white border-2 border-[#facc15]/70 shadow-lg flex items-center justify-center shrink-0">
+              <img
+                src="/assets/aistudio/WhatsApp_Image_2026-11-10_at_11.30.04_AM__1__a3f09429.jpeg"
+                alt="Logo Oficial SENIA – Secretariado Executivo, Network e IA"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+                <span className="font-cinzel text-lg sm:text-xl font-extrabold text-white">
+                  SENIA – Secretariado Executivo, Network e Inteligência Artificial
+                </span>
+              </div>
+              <p className="text-xs text-[#fef08a] font-serif-luxury italic">
+                &ldquo;Desenvolvendo competências para o seu futuro&rdquo; • Planejar • Organizar • Conquistar
+              </p>
+              <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-body max-w-3xl">
+                A SENIA é uma iniciativa desenhada para capacitar profissionais de assessoria C-Level através da convergência entre
+                orquestração de networks, governança e ferramentas de IA. A <em>Oratória Executiva Inclusiva</em> é a nossa solução
+                central para transformar a comunicação em liderança de alto impacto.
+              </p>
+            </div>
+
+            {onViewCompanyProfile && (
+              <div className="shrink-0 w-full md:w-auto">
+                <button
+                  onClick={onViewCompanyProfile}
+                  className="w-full md:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-[#fef08a] font-bold text-xs sm:text-sm border border-[#facc15]/40 transition-all cursor-pointer"
+                >
+                  <Building2 className="w-4 h-4 text-[#facc15]" />
+                  <span>Ver Perfil da Empresa</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* 4 Brand Pillars Grid */}
+        <div className="mt-14">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <p className="text-xs uppercase font-bold tracking-widest text-[#facc15]">Metodologia de Excelência</p>
+            <p className="text-xs uppercase font-bold tracking-widest text-[#facc15]">Fundamentos Estratégicos</p>
             <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">
-              Os Pilares da Formação Executiva SENIA
+              Os 4 Pilares da Marca SENIA
             </h2>
+            <p className="text-xs sm:text-sm text-slate-300 mt-2 font-serif-luxury italic">
+              Desenvolvendo competências para o seu futuro através de Secretariado Executivo, Network e IA
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {pillars.map((pillar, idx) => {
+            {brandPillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div
@@ -209,14 +377,17 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                     <h3 className="text-lg font-bold text-white group-hover:text-[#fef08a] transition-colors font-cinzel">
                       {pillar.title}
                     </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-body">
+                    <p className="text-xs font-semibold text-[#fef08a] mt-0.5 font-sans">
+                      {pillar.tagline}
+                    </p>
+                    <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-body">
                       {pillar.description}
                     </p>
                   </div>
 
                   <div className="mt-5 pt-4 border-t border-[#facc15]/15 flex items-center text-xs text-[#facc15] font-semibold gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" />
-                    <span>Critério Avaliativo Rigoroso</span>
+                    <span>Competência Integrada</span>
                   </div>
                 </div>
               );

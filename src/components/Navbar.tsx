@@ -16,13 +16,14 @@ import {
   Accessibility,
   Ear,
   Eye,
+  Building2,
 } from 'lucide-react';
 import { AccessibilitySettings } from '../services/api';
 import { StudentProfile } from '../types';
 
 interface NavbarProps {
-  currentTab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat';
-  onSelectTab: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat') => void;
+  currentTab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company';
+  onSelectTab: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company') => void;
   accessibility: AccessibilitySettings;
   onUpdateAccessibility: (settings: Partial<AccessibilitySettings>) => void;
   profile: StudentProfile;
@@ -50,10 +51,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { id: 'home', label: 'Início', icon: GraduationCap, shortcut: 'Alt+1' },
-    { id: 'hub', label: 'Módulos', icon: Sparkles, shortcut: 'Alt+2' },
-    { id: 'studio', label: 'Estúdio de Voz', icon: Mic, shortcut: 'Alt+3' },
-    { id: 'dashboard', label: 'Evolução', icon: LayoutDashboard, shortcut: 'Alt+4' },
-    { id: 'chat', label: 'Mentora Helena', icon: MessageSquareText, shortcut: 'Alt+5' },
+    { id: 'company', label: 'Perfil da Empresa', icon: Building2, shortcut: 'Alt+2' },
+    { id: 'hub', label: 'Módulos', icon: Sparkles, shortcut: 'Alt+3' },
+    { id: 'studio', label: 'Estúdio de Voz', icon: Mic, shortcut: 'Alt+4' },
+    { id: 'dashboard', label: 'Evolução', icon: LayoutDashboard, shortcut: 'Alt+5' },
+    { id: 'chat', label: 'Mentora Helena', icon: MessageSquareText, shortcut: 'Alt+6' },
   ] as const;
 
   return (
@@ -75,22 +77,26 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Logo & Brand Identity */}
             <button
               onClick={() => onSelectTab('home')}
-              className="flex items-center gap-3.5 group text-left focus-visible:ring-4 focus-visible:ring-[#facc15] focus-visible:outline-none rounded-xl p-1 cursor-pointer"
-              aria-label="Ir para a Página Inicial da SENIA"
+              className="flex items-center gap-2.5 sm:gap-3.5 group text-left focus-visible:ring-4 focus-visible:ring-[#facc15] focus-visible:outline-none rounded-xl p-1 cursor-pointer shrink-0"
+              aria-label="Ir para a Página Inicial da SENIA – Secretariado Executivo, Network e IA"
             >
-              <div className="w-11 h-11 rounded-xl gold-gradient-bg flex items-center justify-center shadow-lg shadow-[#050e1d]/80 group-hover:scale-105 transition-transform duration-300">
-                <span className="font-cinzel text-xl font-extrabold text-[#050e1d] tracking-widest">S</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 p-1 rounded-xl bg-white border border-[#facc15]/60 shadow-md group-hover:scale-105 group-hover:border-[#facc15] transition-all duration-300 flex items-center justify-center shrink-0">
+                <img
+                  src="/assets/aistudio/WhatsApp_Image_2026-11-10_at_11.30.04_AM__1__a3f09429.jpeg"
+                  alt="Logo Oficial SENIA – Secretariado Executivo, Network e IA"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-wider gold-gradient-text">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="font-cinzel text-lg sm:text-2xl font-extrabold tracking-wider gold-gradient-text leading-tight">
                     SENIA
                   </span>
-                  <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded bg-[#10294e] text-[#fef08a] border border-[#facc15]/30">
-                    Secretariado
+                  <span className="hidden sm:inline-block text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded bg-[#10294e] text-[#fef08a] border border-[#facc15]/30 whitespace-nowrap">
+                    Secretariado • Network • IA
                   </span>
                 </div>
-                <p className="text-[11px] sm:text-xs text-slate-300 tracking-wide font-serif-luxury italic">
+                <p className="text-[10px] sm:text-xs text-slate-300 tracking-wide font-serif-luxury italic leading-tight">
                   Oratória Executiva Inclusiva
                 </p>
               </div>

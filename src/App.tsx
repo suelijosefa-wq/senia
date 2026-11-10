@@ -5,6 +5,7 @@ import { TrainingHub } from './components/TrainingHub';
 import { VoiceTrainingStudio } from './components/VoiceTrainingStudio';
 import { StudentDashboard } from './components/StudentDashboard';
 import { MentorChatDrawer } from './components/MentorChatDrawer';
+import { CompanyProfile } from './components/CompanyProfile';
 import { EvaluationModal } from './components/EvaluationModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
 import { LibrasModal } from './components/LibrasModal';
@@ -19,10 +20,10 @@ import {
   speakText,
   getScreenAudioDescription,
 } from './services/api';
-import { Sparkles, Shield, Heart, GraduationCap, Accessibility } from 'lucide-react';
+import { Sparkles, Shield, Heart, GraduationCap, Accessibility, Building2 } from 'lucide-react';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<'home' | 'hub' | 'studio' | 'dashboard' | 'chat'>('home');
+  const [currentTab, setCurrentTab] = useState<'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company'>('home');
   const [currentExercise, setCurrentExercise] = useState<ExerciseItem>(EXERCISES[0]);
   const [history, setHistory] = useState<HistoryRecord[]>([]);
   const [profile, setProfile] = useState<StudentProfile>(api.getProfile());
@@ -62,17 +63,21 @@ export default function App() {
           speakText('Navegando para Página Inicial.');
         } else if (e.key === '2') {
           e.preventDefault();
+          setCurrentTab('company');
+          speakText('Navegando para Perfil da Empresa SENIA.');
+        } else if (e.key === '3') {
+          e.preventDefault();
           setCurrentTab('hub');
           speakText('Navegando para Módulos de Formação.');
-        } else if (e.key === '3') {
+        } else if (e.key === '4') {
           e.preventDefault();
           setCurrentTab('studio');
           speakText('Navegando para Estúdio de Treinamento.');
-        } else if (e.key === '4') {
+        } else if (e.key === '5') {
           e.preventDefault();
           setCurrentTab('dashboard');
           speakText('Navegando para Evolução do Aluno.');
-        } else if (e.key === '5') {
+        } else if (e.key === '6') {
           e.preventDefault();
           setCurrentTab('chat');
           speakText('Abrindo Mentora Virtual Helena.');
@@ -208,6 +213,7 @@ export default function App() {
               onOpenVoiceStudio={() => setCurrentTab('studio')}
               onOpenChat={() => setCurrentTab('chat')}
               onViewDashboard={() => setCurrentTab('dashboard')}
+              onViewCompanyProfile={() => setCurrentTab('company')}
               speechEnabled={accessibility.autoSpeakAi}
             />
 
@@ -239,6 +245,14 @@ export default function App() {
               </div>
             </div>
           </>
+        )}
+
+        {currentTab === 'company' && (
+          <CompanyProfile
+            onStartTraining={() => setCurrentTab('hub')}
+            onOpenVoiceStudio={() => setCurrentTab('studio')}
+            onOpenChat={() => setCurrentTab('chat')}
+          />
         )}
 
         {currentTab === 'hub' && (
@@ -340,17 +354,33 @@ export default function App() {
       {/* Elegant Executive Footer */}
       <footer role="contentinfo" className="bg-[#030914] border-t border-[#facc15]/20 py-10 px-4 sm:px-6 lg:px-8 text-xs text-slate-400">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg gold-gradient-bg flex items-center justify-center font-cinzel font-bold text-[#050e1d]">
-              S
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 p-1 rounded-xl bg-white border border-[#facc15]/50 shadow-md flex items-center justify-center shrink-0">
+              <img
+                src="/assets/aistudio/WhatsApp_Image_2026-11-10_at_11.30.04_AM__1__a3f09429.jpeg"
+                alt="Logo Oficial SENIA – Secretariado Executivo, Network e IA"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
-              <p className="font-cinzel font-bold text-white tracking-wider">
-                SENIA – Oratória Executiva Inclusiva
+              <p className="font-cinzel font-bold text-white tracking-wider text-sm">
+                SENIA – Secretariado Executivo, Network e IA
               </p>
-              <p className="text-[11px] text-slate-400 font-serif-luxury italic">
-                Formação Pedagógica com IA para Secretariado Executivo
+              <p className="text-[11px] text-[#fef08a] font-medium font-body">
+                Solução Integrada: Oratória Executiva Inclusiva
               </p>
+              <div className="flex items-center gap-2 mt-0.5">
+                <span className="text-[10px] text-slate-400 font-serif-luxury italic">
+                  &ldquo;Desenvolvendo competências para o seu futuro&rdquo; • Planejar • Organizar • Conquistar
+                </span>
+                <span className="text-slate-500">•</span>
+                <button
+                  onClick={() => setCurrentTab('company')}
+                  className="text-[10px] text-[#fef08a] font-semibold hover:underline cursor-pointer"
+                >
+                  Ver Perfil da Empresa
+                </button>
+              </div>
             </div>
           </div>
 

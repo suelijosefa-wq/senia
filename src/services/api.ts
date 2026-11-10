@@ -234,6 +234,8 @@ export function getScreenAudioDescription(tab: string): string {
       return 'Você está no Estúdio de Voz e Treinamento. No centro, há o painel do exercício atual, um visualizador sonoro em ondas, botão para iniciar gravação ou alternar para modo de digitação por texto, campo com transcrição simultânea de sua fala, e à direita métricas de palavras por minuto e competências auditadas.';
     case 'dashboard':
       return 'Você está no Painel de Evolução do Aluno. A tela apresenta o perfil do estudante, média geral de notas de 0 a 10, número de exercícios concluídos, ofensiva de treino em dias, barras de progresso das cinco competências executivas, medalhas de mérito e o histórico detalhado de todas as auditorias realizadas.';
+    case 'company':
+      return 'Você está no Perfil da Empresa SENIA – Secretariado Executivo, Network e Inteligência Artificial. A tela exibe a logo oficial da SENIA em tamanho proporcional e elegante, a apresentação institucional, missão, visão de futuro, a diretriz Planejar, Organizar, Conquistar, os quatro pilares da marca e os compromissos de acessibilidade universal.';
     case 'chat':
       return 'Você está no canal da Mentora Executiva IA, Dra. Helena Valença. Há sugestões de perguntas rápidas, histórico da conversa com balões de diálogo e campo de texto com botão de envio para orientações de oratória, respiração e etiqueta corporativa.';
     default:
