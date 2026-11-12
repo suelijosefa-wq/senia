@@ -128,7 +128,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-cinzel text-lg sm:text-xl font-bold text-white">
+                <h3 className="font-heading text-lg sm:text-xl font-semibold text-white">
                   Auditoria de Oratória Executiva
                 </h3>
                 <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#050e1d] text-[#facc15] border border-[#facc15]/30">
@@ -136,7 +136,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                   {highThinkingApplied ? 'Raciocínio Alto (gemini-4-argon)' : modelUsed}
                 </span>
               </div>
-              <p className="text-xs text-[#fef08a] font-serif-luxury">
+              <p className="text-xs text-[#fef08a] font-medium">
                 Avaliação individualizada com notas de 0 a 10 e diagnóstico formativo
               </p>
             </div>
@@ -193,7 +193,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
               <div className="p-6 rounded-2xl bg-[#050e1d] border border-[#facc15]/30 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-5">
                   <div
-                    className={`w-24 h-24 rounded-2xl border-2 flex flex-col items-center justify-center font-cinzel shadow-xl ${getScoreColor(
+                    className={`w-24 h-24 rounded-2xl border-2 flex flex-col items-center justify-center font-heading shadow-xl ${getScoreColor(
                       evaluation.notaGeral
                     )}`}
                   >
@@ -205,7 +205,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#facc15]">
                       Conceito de Desempenho
                     </span>
-                    <h4 className="font-cinzel text-xl font-bold text-white mt-0.5">
+                    <h4 className="font-heading text-xl font-semibold text-white mt-0.5">
                       {evaluation.notaGeral >= 9.0
                         ? 'Excelência C-Level Plena'
                         : evaluation.notaGeral >= 8.0
@@ -226,7 +226,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                 {wpm !== undefined && wpm > 0 && (
                   <div className="bg-[#071933] p-3.5 rounded-xl border border-[#facc15]/20 text-xs space-y-1 sm:w-48">
                     <p className="text-[#facc15] font-bold uppercase text-[10px]">Cadência Registrada</p>
-                    <p className="text-lg font-bold text-white font-cinzel">
+                    <p className="text-lg font-bold text-white font-heading">
                       {wpm} <span className="text-xs font-normal text-slate-300">PPM</span>
                     </p>
                     <p className="text-[11px] text-slate-300">Duração: {durationSeconds}s</p>
@@ -240,7 +240,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                 <div className="p-5 rounded-2xl bg-[#0a2040] border border-blue-400/35">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle className="w-4 h-4 text-[#facc15]" />
-                    <h4 className="text-sm font-bold text-white font-cinzel">Destaques Positivos</h4>
+                    <h4 className="text-sm font-semibold text-white font-heading">Destaques Positivos</h4>
                   </div>
                   <ul className="space-y-2">
                     {evaluation.destaquesPositivos.map((item, idx) => (
@@ -256,7 +256,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                 <div className="p-5 rounded-2xl bg-[#291e0a] border border-amber-500/35">
                   <div className="flex items-center gap-2 mb-3">
                     <TrendingUp className="w-4 h-4 text-amber-400" />
-                    <h4 className="text-sm font-bold text-white font-cinzel">Oportunidades de Melhoria</h4>
+                    <h4 className="text-sm font-semibold text-white font-heading">Oportunidades de Melhoria</h4>
                   </div>
                   <ul className="space-y-2">
                     {evaluation.pontosMelhoria.map((item, idx) => (
@@ -313,7 +313,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                         <div className="p-2 rounded-lg bg-[#0d2447] text-[#facc15]">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <h4 className="text-sm font-bold text-white font-cinzel">{crit.label}</h4>
+                        <h4 className="text-sm font-semibold text-white font-heading">{crit.label}</h4>
                       </div>
 
                       <div className="flex items-center gap-2">
@@ -323,7 +323,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                             style={{ width: `${Math.min(crit.score * 10, 100)}%` }}
                           />
                         </div>
-                        <span className="text-base font-bold text-[#fef08a] font-cinzel w-10 text-right">
+                        <span className="text-base font-bold text-[#fef08a] font-heading w-10 text-right">
                           {crit.score.toFixed(1)}
                         </span>
                       </div>
@@ -341,7 +341,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <BookOpen className="w-4 h-4 text-[#facc15]" />
-                    <h4 className="text-sm font-bold text-white font-cinzel">
+                    <h4 className="text-sm font-semibold text-white font-heading">
                       Versão Modelo C-Level (Padrão Presidencial)
                     </h4>
                   </div>
@@ -368,7 +368,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                   </button>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#071933] border border-[#facc15]/20 text-slate-200 text-sm sm:text-base leading-relaxed font-serif-luxury italic">
+                <div className="p-4 rounded-xl bg-[#071933] border border-[#facc15]/20 text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
                   "{evaluation.versaoModeloCLevel}"
                 </div>
 

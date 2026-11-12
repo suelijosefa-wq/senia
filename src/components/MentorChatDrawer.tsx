@@ -119,7 +119,7 @@ export const MentorChatDrawer: React.FC<MentorChatDrawerProps> = ({ autoSpeak })
       <div className="p-6 rounded-3xl bg-gradient-to-r from-[#050e1d] via-[#091f3d] to-[#050e1d] border border-[#facc15]/30 blue-card-glow mb-6">
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
           <div className="relative">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gold-gradient-bg flex items-center justify-center text-[#050e1d] font-cinzel text-3xl font-extrabold shadow-xl">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gold-gradient-bg flex items-center justify-center text-[#050e1d] font-heading text-3xl font-extrabold shadow-xl">
               H
             </div>
             <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-blue-500 border-2 border-[#050e1d] flex items-center justify-center">
@@ -129,14 +129,14 @@ export const MentorChatDrawer: React.FC<MentorChatDrawerProps> = ({ autoSpeak })
 
           <div className="text-center sm:text-left flex-1">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-              <h2 className="font-cinzel text-xl sm:text-2xl font-bold text-white">
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white">
                 Dra. Helena Valença
               </h2>
               <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#07152b] text-[#facc15] border border-[#facc15]/40">
                 Mentora Executiva IA
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-[#fef08a] font-serif-luxury mt-1">
+            <p className="text-xs sm:text-sm text-[#fef08a] font-medium mt-1">
               Especialista em Comunicação Diplomática, Oratória Inclusiva e Governança C-Level
             </p>
             <p className="text-xs text-slate-300 font-body mt-2 leading-relaxed">

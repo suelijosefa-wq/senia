@@ -89,10 +89,10 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({
               <Eye className="w-5 h-5" />
             </div>
             <div>
-              <h3 id="accessibility-modal-title" className="font-cinzel text-lg sm:text-xl font-bold text-white">
+              <h3 id="accessibility-modal-title" className="font-heading text-lg sm:text-xl font-semibold text-white">
                 Central de Acessibilidade & Inclusão Universal
               </h3>
-              <p className="text-xs text-[#fef08a] font-serif-luxury">
+              <p className="text-xs text-[#fef08a] font-medium">
                 Recursos para pessoas com deficiência visual, auditiva, motora ou neurodivergência
               </p>
             </div>

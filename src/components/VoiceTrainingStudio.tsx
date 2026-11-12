@@ -369,8 +369,8 @@ export const VoiceTrainingStudio: React.FC<VoiceTrainingStudioProps> = ({
               </span>
               <span className="text-xs text-slate-300">Tempo sugerido: {exercise.recommendedDurationSeconds}s</span>
             </div>
-            <h2 className="font-cinzel text-xl sm:text-2xl font-bold text-white">{exercise.title}</h2>
-            <p className="text-xs sm:text-sm text-[#fef08a] font-serif-luxury mt-1">{exercise.subtitle}</p>
+            <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white">{exercise.title}</h2>
+            <p className="text-xs sm:text-sm text-[#fef08a] font-medium mt-1">{exercise.subtitle}</p>
           </div>
 
           {/* Quick Audio & Spoken Guidelines Controls */}
@@ -575,7 +575,7 @@ export const VoiceTrainingStudio: React.FC<VoiceTrainingStudioProps> = ({
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4 text-[#facc15]" />
-                <h3 className="text-sm font-bold text-white font-cinzel">
+                <h3 className="text-sm font-semibold text-white font-heading">
                   {trainingMode === 'voice'
                     ? 'Transcrição da Sua Oratória (Editável)'
                     : 'Redação da Resposta Executiva (Apoio Visual)'}
@@ -642,13 +642,13 @@ export const VoiceTrainingStudio: React.FC<VoiceTrainingStudioProps> = ({
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <Gauge className="w-4 h-4 text-[#facc15]" />
-                <h4 className="text-sm font-bold text-white font-cinzel">Semáforo Visual de Ritmo</h4>
+                <h4 className="text-sm font-semibold text-white font-heading">Semáforo Visual de Ritmo</h4>
               </div>
               <div className={`w-3 h-3 rounded-full ${cadenceDotColor} animate-pulse`} />
             </div>
 
             <div className="p-4 rounded-xl bg-[#050e1d] border border-[#facc15]/20 text-center">
-              <p className="text-3xl font-extrabold text-[#fef08a] font-cinzel">
+              <p className="text-3xl font-bold text-[#fef08a] font-heading">
                 {trainingMode === 'voice' ? currentWpm : Math.round(wordCount * 0.75)}{' '}
                 <span className="text-xs text-slate-400 font-sans font-normal">
                   {trainingMode === 'voice' ? 'PPM' : 'palavras'}
@@ -698,7 +698,7 @@ export const VoiceTrainingStudio: React.FC<VoiceTrainingStudioProps> = ({
               <HelpCircle className="w-3.5 h-3.5 text-[#facc15]" />
               <span>Dica da Mentora Helena:</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed font-serif-luxury italic">
+            <p className="text-xs text-slate-300 leading-relaxed font-normal">
               "Lembre-se: no Secretariado Executivo, o silêncio de 2 segundos antes de responder a uma pergunta difícil
               não demonstra dúvida, mas sim serenidade e ponderação fiduciária. Respire com o diafragma."
             </p>

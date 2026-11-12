@@ -127,11 +127,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               Solução Educacional: Oratória Executiva Inclusiva
             </div>
 
-            <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.18]">
               A Voz que Articula, Inspira e <span className="gold-gradient-text">Conduz a Alta Gestão</span>.
             </h1>
 
-            <p className="mt-3 text-sm sm:text-base text-amber-200/90 font-serif-luxury italic font-medium">
+            <p className="mt-3 text-sm sm:text-base text-amber-200/90 font-medium">
               &ldquo;Desenvolvendo competências para o seu futuro.&rdquo;
             </p>
 
@@ -146,7 +146,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             {/* Directive Pill */}
             <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#091830] border border-[#facc15]/30 text-xs text-slate-200">
               <span className="text-[#facc15] font-bold">Diretriz Executiva:</span>
-              <span className="font-serif-luxury italic font-semibold text-white">Planejar • Organizar • Conquistar</span>
+              <span className="font-semibold text-white">Planejar • Organizar • Conquistar</span>
             </div>
 
             {/* Action Buttons */}
@@ -187,7 +187,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                     <Mic className="w-4 h-4 animate-pulse" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-white uppercase tracking-wider font-cinzel">
+                    <p className="text-xs font-semibold text-white uppercase tracking-wider font-heading">
                       Simulador de Oratória Executiva
                     </p>
                     <p className="text-[10px] text-[#fef08a]">Auditoria Pedagógica com IA</p>
@@ -222,7 +222,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                     <Award className="w-4 h-4 text-[#facc15]" />
                     <span className="text-xs font-semibold text-white">Nota Global de Comunicação</span>
                   </div>
-                  <span className="font-cinzel text-base font-extrabold text-[#fef08a]">9.6 / 10</span>
+                  <span className="font-heading text-base font-bold text-[#fef08a]">9.6 / 10</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-center">
@@ -266,7 +266,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">0 a 10</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-heading">0 a 10</p>
               <p className="text-xs text-slate-300 font-medium">Auditoria com IA</p>
             </div>
           </div>
@@ -276,7 +276,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">4 Pilares</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-heading">4 Pilares</p>
               <p className="text-xs text-slate-300 font-medium">Estratégicos SENIA</p>
             </div>
           </div>
@@ -286,7 +286,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <Mic className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">Tempo Real</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-heading">Tempo Real</p>
               <p className="text-xs text-slate-300 font-medium">Ritmo, Fonética & PPM</p>
             </div>
           </div>
@@ -296,7 +296,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <Users className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-white font-cinzel">100% Inclusiva</p>
+              <p className="text-xl sm:text-2xl font-bold text-white font-heading">100% Inclusiva</p>
               <p className="text-xs text-slate-300 font-medium">Libras, Áudio & Voz</p>
             </div>
           </div>
@@ -320,11 +320,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                 <span>Sobre a SENIA</span>
               </div>
 
-              <h2 className="font-cinzel text-xl sm:text-2xl font-extrabold text-[#071933] leading-tight">
-                SENIA – Secretariado Executivo, Network e Inteligência Artificial
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#071933] leading-tight">
+                <span className="font-senia text-2xl sm:text-3xl font-extrabold mr-1.5">SENIA</span> – Secretariado Executivo, Network e Inteligência Artificial
               </h2>
 
-              <p className="text-xs sm:text-sm text-amber-800 font-serif-luxury italic font-semibold mt-1">
+              <p className="text-xs sm:text-sm text-amber-800 font-medium mt-1">
                 &ldquo;Desenvolvendo competências para o seu futuro&rdquo; • Planejar • Organizar • Conquistar
               </p>
 
@@ -356,10 +356,10 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             <span className="text-xs uppercase font-extrabold tracking-widest text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full border border-amber-200">
               Fundamentos da Marca
             </span>
-            <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#071933] mt-3">
+            <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-[#071933] mt-3">
               Os 4 Pilares da Identidade SENIA
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2 font-serif-luxury italic">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 font-medium">
               Desenvolvendo competências para o seu futuro através de Secretariado Executivo, Network e IA
             </p>
           </div>
@@ -382,7 +382,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#071933] font-cinzel">
+                    <h3 className="text-lg font-semibold text-[#071933] font-heading">
                       {pillar.title}
                     </h3>
                     <p className="text-xs font-semibold text-amber-700 mt-0.5 font-sans">

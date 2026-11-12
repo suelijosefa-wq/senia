@@ -413,8 +413,8 @@ export const IntelligentAssistant: React.FC<IntelligentAssistantProps> = ({
               />
             </div>
             <div>
-              <p className="font-cinzel text-xs font-bold text-white">Assistente Inteligente</p>
-              <p className="text-[10px] text-[#fef08a]">SENIA IA</p>
+              <p className="font-heading text-xs font-semibold text-white">Assistente Inteligente</p>
+              <p className="text-[10px] text-[#fef08a]"><span className="font-senia font-bold text-xs tracking-wider">SENIA</span> IA</p>
             </div>
           </div>
 
@@ -539,8 +539,8 @@ export const IntelligentAssistant: React.FC<IntelligentAssistantProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="font-cinzel text-base font-extrabold text-[#071933]">
-                    Assistente Inteligente SENIA
+                  <h2 className="font-heading text-base font-semibold text-[#071933]">
+                    Assistente Inteligente <span className="font-senia font-bold text-lg tracking-wider">SENIA</span>
                   </h2>
                   <span className="text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
                     IA Executiva

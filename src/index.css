@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    --font-heading: 'Cinzel', serif;
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-senia: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
@@ -14,20 +14,36 @@
   }
 }
 
+/* SENIA Brand Wordmark: Uppercase, tall, condensed, bold/encorpada like the official logo */
+.font-senia {
+  font-family: var(--font-senia);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Section Headings, Titles and Subtitles: Clean, modern, elegant sans-serif with natural proportions and semibold weight */
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
+}
+
+/* Fallback mappings for clean modern sans-serif */
 .font-cinzel {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
 }
 
 .font-serif-luxury {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-sans);
 }
 
 .font-body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .font-montserrat {
-  font-family: 'Montserrat', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* Yellow and Gold gradients */

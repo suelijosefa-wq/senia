@@ -94,17 +94,17 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
       <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#050e1d] via-[#0b1f3d] to-[#050e1d] border border-[#facc15]/30 blue-card-glow relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4 sm:gap-5">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gold-gradient-bg flex items-center justify-center text-[#050e1d] font-cinzel text-2xl sm:text-3xl font-extrabold shadow-xl">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gold-gradient-bg flex items-center justify-center text-[#050e1d] font-heading text-2xl sm:text-3xl font-extrabold shadow-xl">
               {profile.name.charAt(0)}
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-white">{profile.name}</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">{profile.name}</h2>
                 <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#07152b] text-[#facc15] border border-[#facc15]/40">
                   {profile.levelTitle}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 font-serif-luxury mt-1">{profile.course}</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">{profile.course}</p>
               <p className="text-[11px] text-slate-400 mt-0.5">
                 {profile.institution} • Matrícula: {profile.registration}
               </p>
@@ -127,7 +127,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           <div className="p-4 rounded-2xl bg-[#07152b]/85 border border-[#facc15]/20 backdrop-blur-sm">
             <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Média Geral C-Level</p>
             <div className="mt-1 flex items-baseline gap-1.5">
-              <span className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#fef08a]">
+              <span className="font-heading text-2xl sm:text-3xl font-bold text-[#fef08a]">
                 {profile.averageScore.toFixed(1)}
               </span>
               <span className="text-xs text-slate-400">/ 10</span>
@@ -141,7 +141,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           <div className="p-4 rounded-2xl bg-[#07152b]/85 border border-[#facc15]/20 backdrop-blur-sm">
             <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Exercícios Concluídos</p>
             <div className="mt-1 flex items-baseline gap-1.5">
-              <span className="font-cinzel text-2xl sm:text-3xl font-extrabold text-white">
+              <span className="font-heading text-2xl sm:text-3xl font-bold text-white">
                 {profile.totalExercisesCompleted}
               </span>
               <span className="text-xs text-slate-400">sessões</span>
@@ -152,7 +152,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           <div className="p-4 rounded-2xl bg-[#07152b]/85 border border-[#facc15]/20 backdrop-blur-sm">
             <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ofensiva de Treino</p>
             <div className="mt-1 flex items-center gap-2">
-              <span className="font-cinzel text-2xl sm:text-3xl font-extrabold text-amber-300">
+              <span className="font-heading text-2xl sm:text-3xl font-bold text-amber-300">
                 {profile.streakDays}
               </span>
               <Flame className="w-5 h-5 text-amber-400 fill-amber-400 animate-pulse" />
@@ -163,7 +163,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           <div className="p-4 rounded-2xl bg-[#07152b]/85 border border-[#facc15]/20 backdrop-blur-sm">
             <p className="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Medalhas de Oratória</p>
             <div className="mt-1 flex items-baseline gap-1.5">
-              <span className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#facc15]">
+              <span className="font-heading text-2xl sm:text-3xl font-bold text-[#facc15]">
                 {profile.badges.filter((b) => b.unlocked).length}
               </span>
               <span className="text-xs text-slate-400">/ {profile.badges.length}</span>
@@ -179,10 +179,10 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
         <div className="lg:col-span-2 p-6 rounded-3xl bg-[#071933] border border-[#facc15]/25 blue-card-glow">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="font-cinzel text-lg sm:text-xl font-bold text-white">
-                Mapeamento das 5 Competências SENIA
+              <h3 className="font-heading text-lg sm:text-xl font-semibold text-white">
+                Mapeamento das 5 Competências <span className="font-senia font-bold">SENIA</span>
               </h3>
-              <p className="text-xs text-slate-300 font-serif-luxury">
+              <p className="text-xs text-slate-300 font-medium">
                 Desempenho acumulado em todas as simulações e auditorias com IA
               </p>
             </div>
@@ -195,7 +195,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1">
                 <span className="text-slate-200">1. Dicção, Articulação & Projeção Fonética</span>
-                <span className="text-[#fef08a] font-cinzel">{pillarStats.diccao.toFixed(1)} / 10</span>
+                <span className="text-[#fef08a] font-heading font-semibold">{pillarStats.diccao.toFixed(1)} / 10</span>
               </div>
               <div className="w-full bg-[#050e1d] h-3 rounded-full overflow-hidden border border-[#facc15]/20">
                 <div
@@ -208,7 +208,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1">
                 <span className="text-slate-200">2. Tom, Postura & Serenidade Executiva</span>
-                <span className="text-[#fef08a] font-cinzel">{pillarStats.tom.toFixed(1)} / 10</span>
+                <span className="text-[#fef08a] font-heading font-semibold">{pillarStats.tom.toFixed(1)} / 10</span>
               </div>
               <div className="w-full bg-[#050e1d] h-3 rounded-full overflow-hidden border border-[#facc15]/20">
                 <div
@@ -221,7 +221,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1">
                 <span className="text-slate-200">3. Estrutura Lógica, Síntese & Concisão</span>
-                <span className="text-[#fef08a] font-cinzel">{pillarStats.estrutura.toFixed(1)} / 10</span>
+                <span className="text-[#fef08a] font-heading font-semibold">{pillarStats.estrutura.toFixed(1)} / 10</span>
               </div>
               <div className="w-full bg-[#050e1d] h-3 rounded-full overflow-hidden border border-[#facc15]/20">
                 <div
@@ -234,7 +234,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1">
                 <span className="text-slate-200">4. Empatia, Acolhimento & Linguagem Inclusiva (CNV)</span>
-                <span className="text-[#fef08a] font-cinzel">{pillarStats.empatia.toFixed(1)} / 10</span>
+                <span className="text-[#fef08a] font-heading font-semibold">{pillarStats.empatia.toFixed(1)} / 10</span>
               </div>
               <div className="w-full bg-[#050e1d] h-3 rounded-full overflow-hidden border border-[#facc15]/20">
                 <div
@@ -247,7 +247,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1">
                 <span className="text-slate-200">5. Assertividade Diplomática & Resolução de Atritos</span>
-                <span className="text-[#fef08a] font-cinzel">{pillarStats.assertividade.toFixed(1)} / 10</span>
+                <span className="text-[#fef08a] font-heading font-semibold">{pillarStats.assertividade.toFixed(1)} / 10</span>
               </div>
               <div className="w-full bg-[#050e1d] h-3 rounded-full overflow-hidden border border-[#facc15]/20">
                 <div
@@ -263,7 +263,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
         <div className="p-6 rounded-3xl bg-[#071933] border border-[#facc15]/25 blue-card-glow">
           <div className="flex items-center gap-2 mb-4">
             <Award className="w-5 h-5 text-[#facc15]" />
-            <h3 className="font-cinzel text-lg font-bold text-white">Insígnias de Mérito</h3>
+            <h3 className="font-heading text-lg font-semibold text-white">Insígnias de Mérito</h3>
           </div>
 
           <div className="space-y-3">
@@ -285,7 +285,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="text-xs sm:text-sm font-bold text-white font-cinzel">{badge.title}</h4>
+                    <h4 className="text-xs sm:text-sm font-semibold text-white font-heading">{badge.title}</h4>
                     {badge.unlocked && (
                       <span className="text-[9px] uppercase font-bold text-[#facc15] px-1.5 py-0.5 rounded bg-[#050e1d] border border-[#facc15]/30">
                         Conquistada
@@ -304,8 +304,8 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
       <div className="p-6 sm:p-8 rounded-3xl bg-[#071933] border border-[#facc15]/25 blue-card-glow">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h3 className="font-cinzel text-xl font-bold text-white">Histórico Detalhado de Auditorias</h3>
-            <p className="text-xs text-slate-300 font-serif-luxury">
+            <h3 className="font-heading text-xl font-semibold text-white">Histórico Detalhado de Auditorias</h3>
+            <p className="text-xs text-slate-300 font-medium">
               Acesse qualquer simulação realizada para rever o feedback, rubricas e ouvir o modelo C-Level
             </p>
           </div>
@@ -351,7 +351,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                 className="group p-4 sm:p-5 rounded-2xl bg-[#050e1d] hover:bg-[#0c2242] border border-[#facc15]/20 hover:border-[#facc15]/50 transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4"
               >
                 <div className="flex items-start sm:items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#0d2447] border border-[#facc15]/30 flex flex-col items-center justify-center font-cinzel text-white shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-[#0d2447] border border-[#facc15]/30 flex flex-col items-center justify-center font-heading text-white shrink-0 group-hover:scale-105 transition-transform">
                     <span className="text-base font-bold text-[#fef08a]">
                       {item.evaluation.notaGeral.toFixed(1)}
                     </span>
@@ -374,7 +374,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
                         </span>
                       )}
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-[#fef08a] transition-colors mt-1 font-cinzel">
+                    <h4 className="text-sm sm:text-base font-semibold text-white group-hover:text-[#fef08a] transition-colors mt-1 font-heading">
                       {item.exerciseTitle}
                     </h4>
                     <p className="text-xs text-slate-300 font-body line-clamp-1 mt-0.5">

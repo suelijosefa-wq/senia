@@ -105,13 +105,13 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
               <span>Perfil Institucional da Empresa</span>
             </div>
 
-            <h1 className="font-cinzel text-2xl sm:text-4xl font-extrabold text-white tracking-wide leading-tight">
+            <h1 className="font-senia text-3xl sm:text-5xl font-black text-white tracking-wider leading-tight">
               SENIA
             </h1>
             <p className="text-sm sm:text-base text-[#fef08a] font-semibold mt-1 font-sans">
               Secretariado Executivo, Network e Inteligência Artificial
             </p>
-            <p className="text-xs sm:text-sm text-slate-300 font-serif-luxury italic mt-2">
+            <p className="text-xs sm:text-sm text-slate-300 font-medium mt-2">
               &ldquo;Desenvolvendo competências para o seu futuro.&rdquo;
             </p>
 
@@ -119,7 +119,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
               <span className="px-3 py-1 rounded-lg bg-[#0f2d57] text-[#fef08a] border border-[#facc15]/30 text-xs font-medium">
                 Solução Principal: Oratória Executiva Inclusiva
               </span>
-              <span className="px-3 py-1 rounded-lg bg-[#07152b] text-slate-200 border border-[#facc15]/20 text-xs font-serif-luxury italic">
+              <span className="px-3 py-1 rounded-lg bg-[#07152b] text-slate-200 border border-[#facc15]/20 text-xs font-medium">
                 Planejar • Organizar • Conquistar
               </span>
             </div>
@@ -135,7 +135,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
               <Compass className="w-3.5 h-3.5 text-amber-600" />
               <span>Quem Somos & Origem</span>
             </div>
-            <h2 className="font-cinzel text-2xl font-bold text-[#071933] mb-4">
+            <h2 className="font-heading text-2xl font-semibold text-[#071933] mb-4">
               A Nova Fronteira do Secretariado Executivo
             </h2>
             <div className="space-y-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-body">
@@ -176,7 +176,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
         {/* Missão, Visão e Diretriz (Cards Brancos com Acentos Azuis e Dourados) */}
         <div className="lg:col-span-5 space-y-4 flex flex-col justify-between">
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
-            <h3 className="text-xs font-bold text-amber-800 font-cinzel uppercase tracking-wider flex items-center gap-2 mb-2">
+            <h3 className="text-xs font-bold text-amber-800 font-heading uppercase tracking-wider flex items-center gap-2 mb-2">
               <Award className="w-4 h-4 text-amber-600" />
               <span>Missão Institucional</span>
             </h3>
@@ -187,7 +187,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
           </div>
 
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
-            <h3 className="text-xs font-bold text-amber-800 font-cinzel uppercase tracking-wider flex items-center gap-2 mb-2">
+            <h3 className="text-xs font-bold text-amber-800 font-heading uppercase tracking-wider flex items-center gap-2 mb-2">
               <Sparkles className="w-4 h-4 text-amber-600" />
               <span>Visão de Futuro</span>
             </h3>
@@ -201,10 +201,10 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
             <p className="text-xs font-bold uppercase tracking-widest text-[#fef08a] mb-1">
               Diretriz Prática de Ação
             </p>
-            <p className="text-base sm:text-lg font-cinzel font-bold text-white tracking-wide">
+            <p className="text-base sm:text-lg font-heading font-semibold text-white tracking-wide">
               Planejar • Organizar • Conquistar
             </p>
-            <p className="text-xs text-amber-200/80 font-serif-luxury italic mt-1">
+            <p className="text-xs text-amber-200/80 font-medium mt-1">
               O método SENIA aplicado em cada simulação corporativa.
             </p>
           </div>
@@ -217,10 +217,10 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
           <span className="text-xs uppercase font-extrabold tracking-widest text-amber-800 bg-amber-100/70 px-3 py-1 rounded-full border border-amber-200">
             Pilares de Excelência
           </span>
-          <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#071933] mt-3">
+          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-[#071933] mt-3">
             Os 4 Pilares da Marca SENIA
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-2 font-serif-luxury italic">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2 font-medium">
             Valores inegociáveis que orientam cada módulo e interação pedagógica.
           </p>
         </div>
@@ -237,7 +237,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
                   <div className="w-12 h-12 rounded-xl bg-[#071933] text-[#facc15] flex items-center justify-center mb-4 shadow-md">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#071933] font-cinzel">{pillar.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#071933] font-heading">{pillar.title}</h3>
                   <p className="text-xs font-semibold text-amber-700 mt-0.5">{pillar.tagline}</p>
                   <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
                     {pillar.description}
@@ -260,7 +260,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
             <Mic className="w-3.5 h-3.5 text-amber-600" />
             <span>Solução Integrada SENIA</span>
           </div>
-          <h2 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#071933]">
+          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-[#071933]">
             Oratória Executiva Inclusiva
           </h2>
           <p className="mt-3 text-xs sm:text-sm text-slate-700 leading-relaxed font-body">
@@ -272,21 +272,21 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-            <p className="font-cinzel text-base font-bold text-[#071933]">1. Dicção & Fonética</p>
+            <p className="font-heading text-base font-semibold text-[#071933]">1. Dicção & Fonética</p>
             <p className="text-xs text-slate-600 mt-2 leading-relaxed">
               Exercícios direcionados de articulação, ritmo ideal (130-150 PPM) e eliminação de vícios de linguagem.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-            <p className="font-cinzel text-base font-bold text-[#071933]">2. Simulações C-Level</p>
+            <p className="font-heading text-base font-semibold text-[#071933]">2. Simulações C-Level</p>
             <p className="text-xs text-slate-600 mt-2 leading-relaxed">
               Cenários imersivos de ata sob pressão, entrevistas de assessoria internacional e mediação de crises.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-            <p className="font-cinzel text-base font-bold text-[#071933]">3. Avaliação de 0 a 10</p>
+            <p className="font-heading text-base font-semibold text-[#071933]">3. Avaliação de 0 a 10</p>
             <p className="text-xs text-slate-600 mt-2 leading-relaxed">
               Critérios rigorosos de clareza, concisão, empatia, assertividade e inteligência emocional com feedback imediato.
             </p>
@@ -327,7 +327,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
           <HeartHandshake className="w-4 h-4 text-amber-600" />
           <span>Acessibilidade Universal & Compromisso Social</span>
         </div>
-        <h2 className="font-cinzel text-xl sm:text-2xl font-bold text-[#071933] mb-2">
+        <h2 className="font-heading text-xl sm:text-2xl font-semibold text-[#071933] mb-2">
           Inclusão que Abraça Todas as Potencialidades
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-body max-w-3xl mb-6">
@@ -344,7 +344,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
                   <div className="w-10 h-10 rounded-xl bg-[#071933] text-[#facc15] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-cinzel text-base font-bold text-[#071933]">{acc.title}</h3>
+                  <h3 className="font-heading text-base font-semibold text-[#071933]">{acc.title}</h3>
                 </div>
                 <ul className="space-y-2.5 text-xs text-slate-700">
                   {acc.items.map((item, i) => (

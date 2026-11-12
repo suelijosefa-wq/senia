@@ -48,14 +48,14 @@ export const LibrasModal: React.FC<LibrasModalProps> = ({ onClose }) => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 id="libras-modal-title" className="font-cinzel text-lg sm:text-xl font-bold text-white">
+                <h3 id="libras-modal-title" className="font-heading text-lg sm:text-xl font-semibold text-white">
                   Central & Dicionário em Libras – Secretariado Executivo
                 </h3>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#050e1d] text-[#facc15] border border-[#facc15]/30">
                   Língua Brasileira de Sinais
                 </span>
               </div>
-              <p className="text-xs text-[#fef08a] font-serif-luxury">
+              <p className="text-xs text-[#fef08a] font-medium">
                 Acessibilidade comunicacional, dactilologia e terminologia executiva oficial
               </p>
             </div>
@@ -120,10 +120,10 @@ export const LibrasModal: React.FC<LibrasModalProps> = ({ onClose }) => {
                   <span className="text-[10px] uppercase font-bold tracking-widest text-[#facc15]">
                     Glossário Corporativo Inclusivo
                   </span>
-                  <h4 className="font-cinzel text-xl sm:text-2xl font-bold text-white mt-0.5">
+                  <h4 className="font-heading text-xl sm:text-2xl font-semibold text-white mt-0.5">
                     {selectedTerm.word}
                   </h4>
-                  <p className="text-xs text-slate-300 font-serif-luxury mt-1">{selectedTerm.context}</p>
+                  <p className="text-xs text-slate-300 font-medium mt-1">{selectedTerm.context}</p>
                 </div>
 
                 <button

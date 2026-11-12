@@ -90,14 +90,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  <span className="font-cinzel text-lg sm:text-2xl font-extrabold tracking-wider gold-gradient-text leading-tight">
+                  <span className="font-senia text-2xl sm:text-3xl font-extrabold tracking-wider gold-gradient-text leading-none">
                     SENIA
                   </span>
                   <span className="hidden sm:inline-block text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded bg-[#10294e] text-[#fef08a] border border-[#facc15]/30 whitespace-nowrap">
                     Secretariado • Network • IA
                   </span>
                 </div>
-                <p className="text-[10px] sm:text-xs text-slate-300 tracking-wide font-serif-luxury italic leading-tight">
+                <p className="text-[10px] sm:text-xs text-slate-300 tracking-wide font-medium leading-tight mt-0.5">
                   Oratória Executiva Inclusiva
                 </p>
               </div>

@@ -124,10 +124,10 @@ export const TrainingHub: React.FC<TrainingHubProps> = ({
             <Sparkles className="w-3.5 h-3.5 text-[#facc15]" />
             <span>Matriz Pedagógica de Secretariado Executivo</span>
           </div>
-          <h2 className="font-cinzel text-2xl sm:text-3xl font-extrabold text-white">
+          <h2 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
             Módulos de Treinamento Executivo
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 font-serif-luxury mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl font-normal">
             Escolha um desafio corporativo real para praticar sua oratória, dicção, inteligência emocional e liderança.
             Grave sua fala para receber uma auditoria com nota de 0 a 10.
           </p>
@@ -216,10 +216,10 @@ export const TrainingHub: React.FC<TrainingHubProps> = ({
                   </div>
                 </div>
 
-                <h3 className="font-cinzel text-lg font-bold text-[#071933] group-hover:text-amber-800 transition-colors leading-snug">
+                <h3 className="font-heading text-lg font-semibold text-[#071933] group-hover:text-amber-800 transition-colors leading-snug">
                   {exercise.title}
                 </h3>
-                <p className="text-xs text-amber-700 font-serif-luxury italic mt-1 font-semibold">{exercise.subtitle}</p>
+                <p className="text-xs text-amber-700 font-medium mt-1">{exercise.subtitle}</p>
 
                 <p className="text-xs text-slate-600 font-body leading-relaxed mt-3 line-clamp-3">
                   {exercise.scenario}

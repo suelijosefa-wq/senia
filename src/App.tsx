@@ -226,10 +226,10 @@ export default function App() {
                     <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                     <span>Desafio em Destaque do Dia</span>
                   </div>
-                  <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-[#071933]">
+                  <h3 className="font-heading text-xl sm:text-2xl font-semibold text-[#071933]">
                     {currentExercise.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 font-serif-luxury mt-1">
+                  <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
                     {currentExercise.subtitle}
                   </p>
                 </div>
@@ -365,14 +365,14 @@ export default function App() {
               />
             </div>
             <div>
-              <p className="font-cinzel font-bold text-white tracking-wider text-sm">
-                SENIA – Secretariado Executivo, Network e IA
+              <p className="text-white text-sm font-semibold tracking-normal">
+                <span className="font-senia font-bold text-base tracking-wider mr-1">SENIA</span> – Secretariado Executivo, Network e IA
               </p>
               <p className="text-[11px] text-[#fef08a] font-medium font-body">
                 Solução Integrada: Oratória Executiva Inclusiva
               </p>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="text-[10px] text-slate-400 font-serif-luxury italic">
+                <span className="text-[10px] text-slate-400 font-medium">
                   &ldquo;Desenvolvendo competências para o seu futuro&rdquo; • Planejar • Organizar • Conquistar
                 </span>
                 <span className="text-slate-500">•</span>
