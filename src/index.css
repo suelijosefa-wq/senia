@@ -26,6 +26,10 @@
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
+.font-montserrat {
+  font-family: 'Montserrat', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
 /* Yellow and Gold gradients */
 .gold-gradient-text {
   background: linear-gradient(135deg, #fef9c3 0%, #facc15 35%, #eab308 70%, #ca8a04 100%);

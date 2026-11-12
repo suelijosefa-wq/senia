@@ -61,6 +61,13 @@ export interface ChatMessage {
   timestamp: string;
 }
 
+export interface ConversationSession {
+  id: string;
+  title: string;
+  createdAt: string;
+  messages: ChatMessage[];
+}
+
 export interface StudentProfile {
   name: string;
   registration: string;

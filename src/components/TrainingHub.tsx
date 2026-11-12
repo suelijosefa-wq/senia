@@ -203,35 +203,35 @@ export const TrainingHub: React.FC<TrainingHubProps> = ({
           return (
             <div
               key={exercise.id}
-              className="p-6 rounded-3xl bg-[#071933] border border-[#facc15]/25 hover:border-[#facc15]/60 blue-card-glow hover:bg-[#0b2244] transition-all duration-300 flex flex-col justify-between group"
+              className="p-6 rounded-3xl bg-white border-2 border-slate-200 hover:border-amber-400 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-[#050e1d] text-[#facc15] border border-[#facc15]/30">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
                     {exercise.level}
                   </span>
-                  <div className="flex items-center gap-1 text-[11px] text-slate-400">
-                    <Clock className="w-3.5 h-3.5 text-[#facc15]" />
+                  <div className="flex items-center gap-1 text-[11px] text-slate-500 font-medium">
+                    <Clock className="w-3.5 h-3.5 text-amber-600" />
                     <span>{exercise.recommendedDurationSeconds}s</span>
                   </div>
                 </div>
 
-                <h3 className="font-cinzel text-lg font-bold text-white group-hover:text-[#fef08a] transition-colors leading-snug">
+                <h3 className="font-cinzel text-lg font-bold text-[#071933] group-hover:text-amber-800 transition-colors leading-snug">
                   {exercise.title}
                 </h3>
-                <p className="text-xs text-[#facc15] font-serif-luxury mt-1">{exercise.subtitle}</p>
+                <p className="text-xs text-amber-700 font-serif-luxury italic mt-1 font-semibold">{exercise.subtitle}</p>
 
-                <p className="text-xs text-slate-300 font-body leading-relaxed mt-3 line-clamp-3">
+                <p className="text-xs text-slate-600 font-body leading-relaxed mt-3 line-clamp-3">
                   {exercise.scenario}
                 </p>
 
                 {/* Expected Competencies */}
-                <div className="mt-4 pt-3 border-t border-[#facc15]/15">
+                <div className="mt-4 pt-3 border-t border-slate-100">
                   <p className="text-[10px] uppercase font-bold text-slate-400 mb-1.5">Competências:</p>
                   <div className="space-y-1">
                     {exercise.expectedCompetencies.slice(0, 2).map((comp, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5 text-xs text-slate-200">
-                        <CheckCircle2 className="w-3 h-3 text-[#facc15] shrink-0" />
+                      <div key={idx} className="flex items-center gap-1.5 text-xs text-slate-700">
+                        <CheckCircle2 className="w-3 h-3 text-amber-600 shrink-0" />
                         <span className="truncate">{comp}</span>
                       </div>
                     ))}
@@ -240,18 +240,18 @@ export const TrainingHub: React.FC<TrainingHubProps> = ({
               </div>
 
               {/* Action Button */}
-              <div className="mt-6 pt-4 border-t border-[#facc15]/15 flex items-center justify-between gap-3">
-                <span className="text-[11px] text-slate-400 font-medium">{exercise.roleContext}</span>
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+                <span className="text-[11px] text-slate-500 font-medium truncate">{exercise.roleContext}</span>
                 <button
                   onClick={() => {
                     onSelectExercise(exercise);
                     onOpenVoiceStudio();
                   }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl gold-gradient-bg text-[#050e1d] font-bold text-xs hover:brightness-110 transition-all cursor-pointer shadow-sm group-hover:scale-105"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#071933] hover:bg-[#0c2447] text-[#fef08a] font-bold text-xs transition-all cursor-pointer shadow-sm group-hover:scale-105 shrink-0"
                 >
-                  <Mic className="w-3.5 h-3.5 text-[#050e1d]" />
+                  <Mic className="w-3.5 h-3.5 text-[#facc15]" />
                   <span>Treinar Agora</span>
-                  <ArrowRight className="w-3 h-3 text-[#050e1d]" />
+                  <ArrowRight className="w-3 h-3 text-[#facc15]" />
                 </button>
               </div>
             </div>

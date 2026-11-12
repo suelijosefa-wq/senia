@@ -5,6 +5,7 @@ import { TrainingHub } from './components/TrainingHub';
 import { VoiceTrainingStudio } from './components/VoiceTrainingStudio';
 import { StudentDashboard } from './components/StudentDashboard';
 import { MentorChatDrawer } from './components/MentorChatDrawer';
+import { IntelligentAssistant } from './components/IntelligentAssistant';
 import { CompanyProfile } from './components/CompanyProfile';
 import { EvaluationModal } from './components/EvaluationModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
@@ -63,24 +64,24 @@ export default function App() {
           speakText('Navegando para Página Inicial.');
         } else if (e.key === '2') {
           e.preventDefault();
+          setCurrentTab('chat');
+          speakText('Navegando para o Assistente Inteligente SENIA.');
+        } else if (e.key === '3') {
+          e.preventDefault();
           setCurrentTab('company');
           speakText('Navegando para Perfil da Empresa SENIA.');
-        } else if (e.key === '3') {
+        } else if (e.key === '4') {
           e.preventDefault();
           setCurrentTab('hub');
           speakText('Navegando para Módulos de Formação.');
-        } else if (e.key === '4') {
+        } else if (e.key === '5') {
           e.preventDefault();
           setCurrentTab('studio');
           speakText('Navegando para Estúdio de Treinamento.');
-        } else if (e.key === '5') {
+        } else if (e.key === '6') {
           e.preventDefault();
           setCurrentTab('dashboard');
           speakText('Navegando para Evolução do Aluno.');
-        } else if (e.key === '6') {
-          e.preventDefault();
-          setCurrentTab('chat');
-          speakText('Abrindo Mentora Virtual Helena.');
         } else if (e.key === 'a' || e.key === 'A') {
           e.preventDefault();
           setAccessibilityModalOpen((prev) => !prev);
@@ -217,18 +218,18 @@ export default function App() {
               speechEnabled={accessibility.autoSpeakAi}
             />
 
-            {/* Quick Practice teaser from Home */}
+            {/* Quick Practice teaser from Home (Balanced White Card) */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#071933] border border-[#facc15]/25 blue-card-glow flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-slate-200 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#facc15] mb-1">
-                    <Sparkles className="w-4 h-4 text-[#facc15]" />
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 w-fit mb-2">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                     <span>Desafio em Destaque do Dia</span>
                   </div>
-                  <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-[#071933]">
                     {currentExercise.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 font-serif-luxury mt-1">
+                  <p className="text-xs sm:text-sm text-slate-600 font-serif-luxury mt-1">
                     {currentExercise.subtitle}
                   </p>
                 </div>
@@ -236,7 +237,7 @@ export default function App() {
                 <div className="flex items-center gap-3 w-full md:w-auto">
                   <button
                     onClick={() => setCurrentTab('studio')}
-                    className="w-full md:w-auto px-6 py-3.5 rounded-xl gold-gradient-bg text-[#050e1d] font-bold text-sm hover:brightness-110 shadow-lg cursor-pointer focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none"
+                    className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#071933] hover:bg-[#0c2447] text-[#fef08a] font-bold text-sm shadow-md transition-all cursor-pointer focus-visible:ring-4 focus-visible:ring-amber-400 focus-visible:outline-none"
                     aria-label={`Iniciar Treino por Voz Agora do exercício ${currentExercise.title}`}
                   >
                     Iniciar Treino Agora
@@ -284,13 +285,14 @@ export default function App() {
         )}
 
         {currentTab === 'chat' && (
-          <MentorChatDrawer
-            autoSpeak={accessibility.autoSpeakAi}
+          <IntelligentAssistant
             onStartExercise={(id) => {
               const found = EXERCISES.find((e) => e.id === id);
               if (found) setCurrentExercise(found);
               setCurrentTab('studio');
             }}
+            onNavigateTab={(tab) => setCurrentTab(tab)}
+            speechEnabledDefault={accessibility.autoSpeakAi}
           />
         )}
       </main>

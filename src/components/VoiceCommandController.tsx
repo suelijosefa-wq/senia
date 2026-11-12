@@ -112,8 +112,8 @@ export const VoiceCommandController: React.FC<VoiceCommandControllerProps> = ({
     } else if (cmd.includes('evolução') || cmd.includes('evolucao') || cmd.includes('desempenho') || cmd.includes('nota') || cmd.includes('aluno')) {
       speakText('Navegando para o Painel de Evolução do Aluno.');
       onNavigate('dashboard');
-    } else if (cmd.includes('mentora') || cmd.includes('helena') || cmd.includes('chat') || cmd.includes('assistente')) {
-      speakText('Abrindo atendimento com a Mentora Helena.');
+    } else if (cmd.includes('assistente') || cmd.includes('inteligente') || cmd.includes('chat') || cmd.includes('perguntar') || cmd.includes('pergunta') || cmd.includes('mentora') || cmd.includes('helena')) {
+      speakText('Navegando para o Assistente Inteligente SENIA.');
       onNavigate('chat');
     } else if (cmd.includes('empresa') || cmd.includes('perfil') || cmd.includes('institucional') || cmd.includes('sobre')) {
       speakText('Navegando para o Perfil Institucional da Empresa SENIA.');

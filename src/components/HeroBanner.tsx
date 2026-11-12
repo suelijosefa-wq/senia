@@ -12,7 +12,7 @@ import {
   TrendingUp,
   Cpu,
   Building2,
-  Volume2,
+  Bot,
 } from 'lucide-react';
 import { speakText, stopSpeaking } from '../services/api';
 
@@ -80,13 +80,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   ];
 
   return (
-    <section className="relative overflow-hidden py-8 md:py-14 bg-gradient-to-b from-[#050e1d] via-[#091b36] to-[#050e1d]">
+    <section className="relative overflow-hidden py-8 md:py-14 bg-gradient-to-b from-[#050e1d] via-[#091b36] to-[#0a1c36]">
       {/* Decorative corporate glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#facc15]/10 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Top Announcement Tag */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d2447] border border-[#facc15]/35 text-xs font-semibold text-[#fef08a] shadow-md">
             <Sparkles className="w-4 h-4 text-[#facc15] animate-spin" style={{ animationDuration: '8s' }} />
             <span>SENIA • Secretariado Executivo, Network e Inteligência Artificial</span>
@@ -161,24 +161,24 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               </button>
 
               <button
+                onClick={onOpenChat}
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-[#fef08a] font-bold text-sm sm:text-base border border-[#facc15]/40 transition-colors shadow-md cursor-pointer"
+              >
+                <Bot className="w-5 h-5 text-[#facc15]" />
+                <span>Assistente Inteligente (IA)</span>
+              </button>
+
+              <button
                 onClick={onStartTraining}
-                className="flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-slate-100 font-semibold text-sm sm:text-base border border-[#facc15]/40 hover:border-[#facc15] transition-all cursor-pointer"
+                className="flex items-center gap-2 px-4 py-3.5 rounded-xl bg-transparent hover:bg-[#0c2242] text-slate-200 hover:text-white font-medium text-sm sm:text-base transition-colors cursor-pointer"
               >
                 <Compass className="w-5 h-5 text-[#facc15]" />
                 <span>Explorar Módulos</span>
               </button>
-
-              <button
-                onClick={onOpenChat}
-                className="flex items-center gap-2 px-4 py-3.5 rounded-xl bg-transparent hover:bg-[#0c2242] text-[#fef08a] font-medium text-sm sm:text-base transition-colors cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-[#facc15]" />
-                <span>Mentora Helena (IA)</span>
-              </button>
             </div>
           </div>
 
-          {/* Interactive Executive Speech & AI Simulator Card (Spotlight on Content & Education) */}
+          {/* Interactive Executive Speech & AI Simulator Card */}
           <div className="lg:col-span-5">
             <div className="rounded-3xl bg-[#071933] border-2 border-[#facc15]/35 p-5 sm:p-6 shadow-2xl shadow-[#050e1d]/90 relative overflow-hidden">
               <div className="flex items-center justify-between pb-4 border-b border-[#facc15]/20">
@@ -259,8 +259,8 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </div>
         </div>
 
-        {/* Highlight Stats Strip */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-[#07152b]/90 border border-[#facc15]/25 backdrop-blur-md">
+        {/* Highlight Stats Strip (Balanced Navy Strip) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-[#07152b]/95 border border-[#facc15]/25 backdrop-blur-md">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#0f2d57] flex items-center justify-center text-[#facc15]">
               <Award className="w-5 h-5" />
@@ -302,11 +302,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </div>
         </div>
 
-        {/* Apresentação da Empresa (Seção Institucional Proporcional com Logo Elegante) */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#07162d] via-[#0a2143] to-[#07162d] border border-[#facc15]/30 blue-card-glow">
+        {/* SEÇÃO 1 COM FUNDO BRANCO: Apresentação da Empresa SENIA */}
+        <div className="p-6 sm:p-10 rounded-3xl bg-white border-2 border-slate-200/90 shadow-2xl text-slate-800">
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
-            {/* Proportionate, elegant logo badge */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 p-1.5 rounded-2xl bg-white border-2 border-[#facc15]/70 shadow-lg flex items-center justify-center shrink-0">
+            {/* Proportionate, elegant official logo badge */}
+            <div className="w-20 h-20 sm:w-24 sm:h-24 p-2 rounded-2xl bg-white border border-amber-300 shadow-md flex items-center justify-center shrink-0">
               <img
                 src="/assets/aistudio/WhatsApp_Image_2026-11-10_at_11.30.04_AM__1__a3f09429.jpeg"
                 alt="Logo Oficial SENIA – Secretariado Executivo, Network e IA"
@@ -315,18 +315,23 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-                <span className="font-cinzel text-lg sm:text-xl font-extrabold text-white">
-                  SENIA – Secretariado Executivo, Network e Inteligência Artificial
-                </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs font-bold text-amber-900 mb-2">
+                <Building2 className="w-3.5 h-3.5 text-amber-600" />
+                <span>Sobre a SENIA</span>
               </div>
-              <p className="text-xs text-[#fef08a] font-serif-luxury italic">
+
+              <h2 className="font-cinzel text-xl sm:text-2xl font-extrabold text-[#071933] leading-tight">
+                SENIA – Secretariado Executivo, Network e Inteligência Artificial
+              </h2>
+
+              <p className="text-xs sm:text-sm text-amber-800 font-serif-luxury italic font-semibold mt-1">
                 &ldquo;Desenvolvendo competências para o seu futuro&rdquo; • Planejar • Organizar • Conquistar
               </p>
-              <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-body max-w-3xl">
-                A SENIA é uma iniciativa desenhada para capacitar profissionais de assessoria C-Level através da convergência entre
-                orquestração de networks, governança e ferramentas de IA. A <em>Oratória Executiva Inclusiva</em> é a nossa solução
-                central para transformar a comunicação em liderança de alto impacto.
+
+              <p className="mt-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-body max-w-3xl">
+                A SENIA é uma iniciativa de vanguarda projetada para capacitar profissionais e estudantes de Secretariado Executivo
+                para atuarem como assessores de alta performance. A <strong>Oratória Executiva Inclusiva</strong> é uma de nossas
+                soluções centrais, aliando tecnologia generativa com inteligência emocional e diplomacia corporativa.
               </p>
             </div>
 
@@ -334,10 +339,10 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               <div className="shrink-0 w-full md:w-auto">
                 <button
                   onClick={onViewCompanyProfile}
-                  className="w-full md:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-[#fef08a] font-bold text-xs sm:text-sm border border-[#facc15]/40 transition-all cursor-pointer"
+                  className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#071933] hover:bg-[#0c2447] text-[#fef08a] font-bold text-xs sm:text-sm border border-[#facc15]/40 transition-all shadow-md cursor-pointer"
                 >
                   <Building2 className="w-4 h-4 text-[#facc15]" />
-                  <span>Ver Perfil da Empresa</span>
+                  <span>Conhecer Perfil da Empresa</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -345,14 +350,16 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </div>
         </div>
 
-        {/* 4 Brand Pillars Grid */}
-        <div className="mt-14">
+        {/* SEÇÃO 2 COM FUNDO CLARO: Os 4 Pilares da Marca SENIA */}
+        <div className="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-lg">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <p className="text-xs uppercase font-bold tracking-widest text-[#facc15]">Fundamentos Estratégicos</p>
-            <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">
-              Os 4 Pilares da Marca SENIA
+            <span className="text-xs uppercase font-extrabold tracking-widest text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full border border-amber-200">
+              Fundamentos da Marca
+            </span>
+            <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#071933] mt-3">
+              Os 4 Pilares da Identidade SENIA
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-2 font-serif-luxury italic">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 font-serif-luxury italic">
               Desenvolvendo competências para o seu futuro através de Secretariado Executivo, Network e IA
             </p>
           </div>
@@ -363,30 +370,31 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               return (
                 <div
                   key={idx}
-                  className="group relative p-6 rounded-2xl bg-[#0b1c38]/85 border border-[#facc15]/20 hover:border-[#facc15]/50 hover:bg-[#0f274d] transition-all duration-300 blue-card-glow flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#132f5b] border border-[#facc15]/30 flex items-center justify-center text-[#facc15] group-hover:scale-110 transition-transform">
+                      <div className="w-12 h-12 rounded-xl bg-[#071933] text-[#facc15] flex items-center justify-center shadow-md">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#07152b] text-[#facc15] border border-[#facc15]/25">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
                         {pillar.badge}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#fef08a] transition-colors font-cinzel">
+
+                    <h3 className="text-lg font-bold text-[#071933] font-cinzel">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#fef08a] mt-0.5 font-sans">
+                    <p className="text-xs font-semibold text-amber-700 mt-0.5 font-sans">
                       {pillar.tagline}
                     </p>
-                    <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-body">
+                    <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
                       {pillar.description}
                     </p>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-[#facc15]/15 flex items-center text-xs text-[#facc15] font-semibold gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#facc15]" />
+                  <div className="mt-5 pt-4 border-t border-slate-100 flex items-center text-xs text-[#071933] font-semibold gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-600" />
                     <span>Competência Integrada</span>
                   </div>
                 </div>

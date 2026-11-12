@@ -237,7 +237,7 @@ export function getScreenAudioDescription(tab: string): string {
     case 'company':
       return 'Você está no Perfil da Empresa SENIA – Secretariado Executivo, Network e Inteligência Artificial. A tela exibe a logo oficial da SENIA em tamanho proporcional e elegante, a apresentação institucional, missão, visão de futuro, a diretriz Planejar, Organizar, Conquistar, os quatro pilares da marca e os compromissos de acessibilidade universal.';
     case 'chat':
-      return 'Você está no canal da Mentora Executiva IA, Dra. Helena Valença. Há sugestões de perguntas rápidas, histórico da conversa com balões de diálogo e campo de texto com botão de envio para orientações de oratória, respiração e etiqueta corporativa.';
+      return 'Você está no Assistente Inteligente SENIA, uma área interativa inspirada no ChatGPT para perguntas e respostas com inteligência artificial. À esquerda há o histórico de conversas e o botão para iniciar uma nova conversa. Ao centro, há o fluxo de mensagens com botões para ouvir respostas em áudio e copiar texto. Na base, há o campo para digitar perguntas, o botão de microfone para interação por voz e o botão de envio.';
     default:
       return 'Plataforma SENIA – Oratória Executiva Inclusiva.';
   }

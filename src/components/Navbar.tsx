@@ -17,6 +17,7 @@ import {
   Ear,
   Eye,
   Building2,
+  Bot,
 } from 'lucide-react';
 import { AccessibilitySettings } from '../services/api';
 import { StudentProfile } from '../types';
@@ -51,11 +52,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { id: 'home', label: 'Início', icon: GraduationCap, shortcut: 'Alt+1' },
-    { id: 'company', label: 'Perfil da Empresa', icon: Building2, shortcut: 'Alt+2' },
-    { id: 'hub', label: 'Módulos', icon: Sparkles, shortcut: 'Alt+3' },
-    { id: 'studio', label: 'Estúdio de Voz', icon: Mic, shortcut: 'Alt+4' },
-    { id: 'dashboard', label: 'Evolução', icon: LayoutDashboard, shortcut: 'Alt+5' },
-    { id: 'chat', label: 'Mentora Helena', icon: MessageSquareText, shortcut: 'Alt+6' },
+    { id: 'chat', label: 'Assistente Inteligente', icon: Bot, shortcut: 'Alt+2' },
+    { id: 'company', label: 'Perfil da Empresa', icon: Building2, shortcut: 'Alt+3' },
+    { id: 'hub', label: 'Módulos', icon: Sparkles, shortcut: 'Alt+4' },
+    { id: 'studio', label: 'Estúdio de Voz', icon: Mic, shortcut: 'Alt+5' },
+    { id: 'dashboard', label: 'Evolução', icon: LayoutDashboard, shortcut: 'Alt+6' },
   ] as const;
 
   return (
