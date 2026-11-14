@@ -5,7 +5,7 @@ import { speakText, getScreenAudioDescription } from '../services/api';
 interface VoiceCommandControllerProps {
   active: boolean;
   currentTab: string;
-  onNavigate: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company') => void;
+  onNavigate: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'company') => void;
   onOpenAccessibilityModal: () => void;
   onOpenLibrasModal: () => void;
 }
@@ -112,9 +112,6 @@ export const VoiceCommandController: React.FC<VoiceCommandControllerProps> = ({
     } else if (cmd.includes('evolução') || cmd.includes('evolucao') || cmd.includes('desempenho') || cmd.includes('nota') || cmd.includes('aluno')) {
       speakText('Navegando para o Painel de Evolução do Aluno.');
       onNavigate('dashboard');
-    } else if (cmd.includes('assistente') || cmd.includes('inteligente') || cmd.includes('chat') || cmd.includes('perguntar') || cmd.includes('pergunta') || cmd.includes('mentora') || cmd.includes('helena')) {
-      speakText('Navegando para o Assistente Inteligente SENIA.');
-      onNavigate('chat');
     } else if (cmd.includes('empresa') || cmd.includes('perfil') || cmd.includes('institucional') || cmd.includes('sobre')) {
       speakText('Navegando para o Perfil Institucional da Empresa SENIA.');
       onNavigate('company');
@@ -129,7 +126,7 @@ export const VoiceCommandController: React.FC<VoiceCommandControllerProps> = ({
       onOpenAccessibilityModal();
     } else if (cmd.includes('ajuda') || cmd.includes('comandos')) {
       speakText(
-        'Comandos de voz disponíveis: Diga "Início", "Perfil da Empresa", "Módulos", "Estúdio", "Evolução", "Mentora", "Descrever Tela", "Libras" ou "Acessibilidade".'
+        'Comandos de voz disponíveis: Diga "Início", "Perfil da Empresa", "Módulos", "Estúdio", "Evolução", "Descrever Tela", "Libras" ou "Acessibilidade".'
       );
     }
   };

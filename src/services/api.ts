@@ -34,20 +34,6 @@ export const DEFAULT_ACCESSIBILITY: AccessibilitySettings = {
 };
 
 export const api = {
-  // Chat with Mentora Helena Valença
-  async sendChatMessage(message: string, history: { role: string; content: string }[], moduleContext = 'Geral') {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, conversationHistory: history, moduleContext }),
-    });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error || 'Erro na comunicação com a Mentora');
-    }
-    return res.json();
-  },
-
   // Deep evaluation of student response (high-thinking gemini-4-argon)
   async evaluateResponse(params: {
     exerciseTitle: string;
@@ -227,7 +213,7 @@ export function stopSpeaking() {
 export function getScreenAudioDescription(tab: string): string {
   switch (tab) {
     case 'home':
-      return 'Você está na Página Inicial da SENIA – Oratória Executiva Inclusiva. A tela exibe o título principal "A Voz que Articula, Inspira e Conduz a Alta Gestão", três botões de ação: Gravar e Analisar Voz, Explorar Módulos e Falar com a Mentora. Logo abaixo, quatro cartões apresentam os pilares: Dicção C-Level, Entrevistas, Reuniões e Liderança Inclusiva, além de um desafio em destaque pronto para treino.';
+      return 'Você está na Página Inicial da SENIA – Oratória Executiva Inclusiva. A tela exibe o título principal "A Voz que Articula, Inspira e Conduz a Alta Gestão", dois botões de ação: Gravar e Analisar Voz e Explorar Módulos. Logo abaixo, quatro cartões apresentam os pilares: Profissionalismo, Inovação, Conexões e Resultados, além de um desafio em destaque pronto para treino.';
     case 'hub':
       return 'Você está na Central de Módulos de Formação Executiva. Há seis filtros de categorias: Todos, Dicção, Entrevistas, Reuniões, Comunicação e Liderança com Comunicação Não-Violenta. Há um botão para Gerar Desafio Inédito com IA e cartões com detalhes de tempo e competências de cada exercício.';
     case 'studio':
@@ -236,8 +222,6 @@ export function getScreenAudioDescription(tab: string): string {
       return 'Você está no Painel de Evolução do Aluno. A tela apresenta o perfil do estudante, média geral de notas de 0 a 10, número de exercícios concluídos, ofensiva de treino em dias, barras de progresso das cinco competências executivas, medalhas de mérito e o histórico detalhado de todas as auditorias realizadas.';
     case 'company':
       return 'Você está no Perfil da Empresa SENIA – Secretariado Executivo, Network e Inteligência Artificial. A tela exibe a logo oficial da SENIA em tamanho proporcional e elegante, a apresentação institucional, missão, visão de futuro, a diretriz Planejar, Organizar, Conquistar, os quatro pilares da marca e os compromissos de acessibilidade universal.';
-    case 'chat':
-      return 'Você está no Assistente Inteligente SENIA, uma área interativa inspirada no ChatGPT para perguntas e respostas com inteligência artificial. À esquerda há o histórico de conversas e o botão para iniciar uma nova conversa. Ao centro, há o fluxo de mensagens com botões para ouvir respostas em áudio e copiar texto. Na base, há o campo para digitar perguntas, o botão de microfone para interação por voz e o botão de envio.';
     default:
       return 'Plataforma SENIA – Oratória Executiva Inclusiva.';
   }

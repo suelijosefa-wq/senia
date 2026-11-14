@@ -4,8 +4,6 @@ import { HeroBanner } from './components/HeroBanner';
 import { TrainingHub } from './components/TrainingHub';
 import { VoiceTrainingStudio } from './components/VoiceTrainingStudio';
 import { StudentDashboard } from './components/StudentDashboard';
-import { MentorChatDrawer } from './components/MentorChatDrawer';
-import { IntelligentAssistant } from './components/IntelligentAssistant';
 import { CompanyProfile } from './components/CompanyProfile';
 import { EvaluationModal } from './components/EvaluationModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
@@ -24,7 +22,7 @@ import {
 import { Sparkles, Shield, Heart, GraduationCap, Accessibility, Building2 } from 'lucide-react';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company'>('home');
+  const [currentTab, setCurrentTab] = useState<'home' | 'hub' | 'studio' | 'dashboard' | 'company'>('home');
   const [currentExercise, setCurrentExercise] = useState<ExerciseItem>(EXERCISES[0]);
   const [history, setHistory] = useState<HistoryRecord[]>([]);
   const [profile, setProfile] = useState<StudentProfile>(api.getProfile());
@@ -62,10 +60,6 @@ export default function App() {
           e.preventDefault();
           setCurrentTab('home');
           speakText('Navegando para Página Inicial.');
-        } else if (e.key === '2') {
-          e.preventDefault();
-          setCurrentTab('chat');
-          speakText('Navegando para o Assistente Inteligente SENIA.');
         } else if (e.key === '3') {
           e.preventDefault();
           setCurrentTab('company');
@@ -212,7 +206,6 @@ export default function App() {
             <HeroBanner
               onStartTraining={() => setCurrentTab('hub')}
               onOpenVoiceStudio={() => setCurrentTab('studio')}
-              onOpenChat={() => setCurrentTab('chat')}
               onViewDashboard={() => setCurrentTab('dashboard')}
               onViewCompanyProfile={() => setCurrentTab('company')}
               speechEnabled={accessibility.autoSpeakAi}
@@ -252,7 +245,6 @@ export default function App() {
           <CompanyProfile
             onStartTraining={() => setCurrentTab('hub')}
             onOpenVoiceStudio={() => setCurrentTab('studio')}
-            onOpenChat={() => setCurrentTab('chat')}
           />
         )}
 
@@ -281,18 +273,6 @@ export default function App() {
             history={history}
             onOpenEvaluationDetails={handleOpenEvaluationDetails}
             onStartNewTraining={() => setCurrentTab('hub')}
-          />
-        )}
-
-        {currentTab === 'chat' && (
-          <IntelligentAssistant
-            onStartExercise={(id) => {
-              const found = EXERCISES.find((e) => e.id === id);
-              if (found) setCurrentExercise(found);
-              setCurrentTab('studio');
-            }}
-            onNavigateTab={(tab) => setCurrentTab(tab)}
-            speechEnabledDefault={accessibility.autoSpeakAi}
           />
         )}
       </main>

@@ -12,14 +12,12 @@ import {
   TrendingUp,
   Cpu,
   Building2,
-  Bot,
 } from 'lucide-react';
 import { speakText, stopSpeaking } from '../services/api';
 
 interface HeroBannerProps {
   onStartTraining: () => void;
   onOpenVoiceStudio: () => void;
-  onOpenChat: () => void;
   onViewDashboard: () => void;
   onViewCompanyProfile?: () => void;
   speechEnabled: boolean;
@@ -28,7 +26,6 @@ interface HeroBannerProps {
 export const HeroBanner: React.FC<HeroBannerProps> = ({
   onStartTraining,
   onOpenVoiceStudio,
-  onOpenChat,
   onViewDashboard,
   onViewCompanyProfile,
   speechEnabled,
@@ -158,14 +155,6 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                 <Mic className="w-5 h-5 text-[#050e1d]" />
                 <span>Gravar e Analisar Voz</span>
                 <ArrowRight className="w-4 h-4 text-[#050e1d]" />
-              </button>
-
-              <button
-                onClick={onOpenChat}
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0f2d57] hover:bg-[#163e77] text-[#fef08a] font-bold text-sm sm:text-base border border-[#facc15]/40 transition-colors shadow-md cursor-pointer"
-              >
-                <Bot className="w-5 h-5 text-[#facc15]" />
-                <span>Assistente Inteligente (IA)</span>
               </button>
 
               <button

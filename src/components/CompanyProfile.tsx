@@ -15,19 +15,16 @@ import {
   Eye,
   Ear,
   Cpu,
-  Bot,
 } from 'lucide-react';
 
 interface CompanyProfileProps {
   onStartTraining: () => void;
   onOpenVoiceStudio: () => void;
-  onOpenChat: () => void;
 }
 
 export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   onStartTraining,
   onOpenVoiceStudio,
-  onOpenChat,
 }) => {
   const pillars = [
     {
@@ -301,14 +298,6 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
             <Mic className="w-4 h-4 text-[#050e1d]" />
             <span>Treinar no Estúdio de Voz</span>
             <ArrowRight className="w-4 h-4 text-[#050e1d]" />
-          </button>
-
-          <button
-            onClick={onOpenChat}
-            className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#071933] hover:bg-[#0c2447] text-[#fef08a] font-bold text-xs sm:text-sm border border-[#facc15]/40 transition-colors shadow-md cursor-pointer"
-          >
-            <Bot className="w-4 h-4 text-[#facc15]" />
-            <span>Conversar com o Assistente IA</span>
           </button>
 
           <button

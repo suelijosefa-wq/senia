@@ -245,7 +245,7 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({
                 <div>
                   <p className="text-xs font-bold text-white">Navegação e Comandos por Voz</p>
                   <p className="text-[11px] text-slate-400">
-                    Controle o app falando "Início", "Estúdio", "Módulos", "Mentora", etc.
+                    Controle o app falando "Início", "Estúdio", "Módulos", "Evolução", etc.
                   </p>
                 </div>
               </div>
@@ -312,9 +312,6 @@ export const AccessibilityModal: React.FC<AccessibilityModalProps> = ({
               </div>
               <div className="p-2 rounded-lg bg-[#071933] border border-[#facc15]/15">
                 <span className="font-mono text-[#fef08a] font-bold">Alt + 4:</span> Evolução
-              </div>
-              <div className="p-2 rounded-lg bg-[#071933] border border-[#facc15]/15">
-                <span className="font-mono text-[#fef08a] font-bold">Alt + 5:</span> Mentora
               </div>
               <div className="p-2 rounded-lg bg-[#071933] border border-[#facc15]/15">
                 <span className="font-mono text-[#fef08a] font-bold">Alt + A:</span> Acessibilidade

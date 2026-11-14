@@ -17,14 +17,13 @@ import {
   Ear,
   Eye,
   Building2,
-  Bot,
 } from 'lucide-react';
 import { AccessibilitySettings } from '../services/api';
 import { StudentProfile } from '../types';
 
 interface NavbarProps {
-  currentTab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company';
-  onSelectTab: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'chat' | 'company') => void;
+  currentTab: 'home' | 'hub' | 'studio' | 'dashboard' | 'company';
+  onSelectTab: (tab: 'home' | 'hub' | 'studio' | 'dashboard' | 'company') => void;
   accessibility: AccessibilitySettings;
   onUpdateAccessibility: (settings: Partial<AccessibilitySettings>) => void;
   profile: StudentProfile;
@@ -52,7 +51,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { id: 'home', label: 'Início', icon: GraduationCap, shortcut: 'Alt+1' },
-    { id: 'chat', label: 'Assistente Inteligente', icon: Bot, shortcut: 'Alt+2' },
     { id: 'company', label: 'Perfil da Empresa', icon: Building2, shortcut: 'Alt+3' },
     { id: 'hub', label: 'Módulos', icon: Sparkles, shortcut: 'Alt+4' },
     { id: 'studio', label: 'Estúdio de Voz', icon: Mic, shortcut: 'Alt+5' },
